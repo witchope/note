@@ -65,7 +65,7 @@ title: Design Principle
 
 最稳定的包应该是最抽象的包，不稳定的包应该是具体的包，即包的抽象程度跟它的稳定性成正比。
 
-# 10. 稳定依赖原则 （The Stable Dependencies Principle - SDP）
+## 10. 稳定依赖原则 （The Stable Dependencies Principle - SDP）
 
 包之间的依赖关系都应该是稳定方向依赖的，包要依赖的包要比自己更具有稳定性。
 
