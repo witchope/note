@@ -1,7 +1,7 @@
 # Java 类加载顺序
 
-<!-- ![加载顺序](../assets/java-init-order.jpg) -->
-![java-init][java-init]
+![加载顺序](../assets/java-init-order.jpg)
+<!-- ![java-init][java-init] -->
 
 有的朋友问到内部的机制，上述的初始化顺序是由下面的几条规则决定的：
 
