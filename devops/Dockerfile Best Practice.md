@@ -2,7 +2,7 @@
 
 ## FROM
 
-用于设置容器基础镜像
+用于设置容器基础镜像。
 
 ```Dockerfile
 FROM scrath # 基于 Base image
@@ -13,7 +13,7 @@ PS： 尽量使用官方的 `image` 作为 `Base image`，尤其推荐 [Alpine][
 
 ## LABEL
 
-用于添加容器 `metadata`，用于描述容器相关特性
+用于添加容器 `metadata` ，用于描述容器相关特性。
 
 ```Dockerfile
 LABEL version="1.0"
@@ -24,7 +24,7 @@ PS： `metadata` 不能少！
 
 ## RUN
 
-用于构建期间，执行命令，并基于现有镜像层，生成一层新的镜像层 (image layer)。
+用于构建期间，执行命令，并基于现有镜像层，生成一层新的镜像层 (image layer) 。
 
 ```Dockerfile
 RUN ["/bin/bash", "-c", "source $HOME/.bashrc"]
@@ -46,7 +46,7 @@ PS： 尽量使用 `CMD ["executable", "param1", "param2"…]` 这种方式编�
 
 ## ADD or COPY
 
-添加或者拷贝本地目录或文件 (new layer)
+添加或者拷贝本地目录或文件 (new layer) 。
 
 ```Dockerfile
 ADD test.tar.gz # 添加到根目录并解压
@@ -66,11 +66,11 @@ EXPOSE 27017 # MongoDB
 
 ## ENV
 
-设置环境变量，例如：`ENV PATH /usr/local/nginx/bin:$PATH`, 能确保 `CMD ["nginx"]` 的运行。
+设置环境变量，例如：`ENV PATH /usr/local/nginx/bin:$PATH` ，能确保 `CMD ["nginx"]` 的运行。
 
 ## ENTRYPOINT
 
-用于设置容器的主运行命令
+用于设置容器的主运行命令。
 
 ```Dockerfile
 COPY ./docker-entrypoint.sh /
@@ -98,10 +98,9 @@ exec "$@"
 
 ```
 
-
 ## WORKDIR
 
-用于目录跳转
+用于目录跳转。
 
 ```Dockerfile
 WORKDIR /root # 相当于cd /root
@@ -110,6 +109,5 @@ RUN pwd # /root/demo
 ```
 
 PS：用 `WORDDIR` ， 不要使用 `RUN cd` ，尽量使用绝对目录！
-
 
 [alpine]: https://hub.docker.com/_/alpine/
