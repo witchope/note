@@ -16,3 +16,7 @@ Spring 中的每个 `Bean` 都有一个 scope 的属性来表示 `Bean` 的作�
 IOC 容器中常见的无状态对象有：VO、DTO、DO、Dao、Service、Controller 等。
 
 同上分析，Spring 根本没有对 Bean 的线程安全作出保证。对于每个 Bean 的线程安全，根本原因在于每个 Bean 的自身设计。尽量不要在 Bean 中声明带有任何状态的实例变量和类变量，如果实在有必要，可以通过 ThreadLocal 变量私有；如果变量需要在多个线程之间共享可以通过 Synchronized、Lock、CAS 等方式实现。
+
+## 参考：
+
+[会创建一个复用单例对象](http://www.importnew.com/27440.html)
