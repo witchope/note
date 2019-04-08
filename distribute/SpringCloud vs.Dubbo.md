@@ -3,7 +3,7 @@
 - [Spring Cloud Dubbo 微服务总结](#spring-cloud-dubbo-微服务总结)
   - [什么是微服务？](#什么是微服务)
   - [Spring Cloud 和 Dubbo 有哪些区别？](#spring-cloud-和-dubbo-有哪些区别)
-  - [SpringBoot 和 SpringCloud 理解](#springboot-和-springcloud-理解)
+  - [Spring Boot 和 Spring Cloud 理解](#spring-boot-和-spring-cloud-理解)
   - [Eureka 和 Zookeeper 有什么异同？](#eureka-和-zookeeper-有什么异同)
 
 ## 什么是微服务？
@@ -19,11 +19,11 @@ Spring Cloud 抛弃了 Dubbo 的 RPC 通信，采用的是基于 HTTP 的 REST �
 
 严格来说，这两种方式各有优劣。虽然从一定程度上来说，后者牺牲了服务调用的性能，但也避免了上面提到的原生 RPC 带来的问题。而且 REST 相比 RPC 更为灵活，服务提供方和调用方的依赖只依靠一纸契约，不存在代码级别的强依赖，这在强调快速演化的微服务环境下，显得更加合适。
 
-Spring Cloud 的功能比 Dubbo 更加强大，涵盖面更广，而且作为Spring的拳头项目，它也能够与 Spring Framework、Spring Boot、Spring Data、Spring Batch 等其他 Spring 项目完美融合，这些对于微服务而言是至关重要的。
+Spring Cloud 的功能比 Dubbo 更加强大，涵盖面更广，而且作为 Spring 的拳头项目，它也能够与 Spring Framework、Spring Boot、Spring Data、Spring Batch 等其他 Spring 项目完美融合，这些对于微服务而言是至关重要的。
 
-社区支持与更新力度方面也是 SpringCloud 更胜一筹。
+社区支持与更新力度方面也是 Spring Cloud 更胜一筹。
 
-## SpringBoot 和 SpringCloud 理解
+## Spring Boot 和 Spring Cloud 理解
 
 Spring Boot 专注于快速方便的开发单个个体微服务的脚手架。
 
@@ -37,8 +37,8 @@ Spring Cloud 依赖于 Spring Boot。
 
 因此 Zookeeper 保证的是 CP，Eureka 则是 AP。
 
-在云部署的环境下，因网络问题使得 zk 集群失去 master 节点是较大概率会发生的事，虽然服务能够最终恢复，但是漫长的选举时间导致的注册长期不可用是不能容忍的。
+在云部署的环境下，因网络问题使得 Zookeeper 集群失去 master 节点是较大概率会发生的事，虽然服务能够最终恢复，但是漫长的选举时间导致的注册长期不可用是不能容忍的。
 
 Eureka各个节点都是平等的，几个节点挂掉不会影响正常节点的工作，剩余的节点依然可以提供注册和查询服务。只不过信息可能滞后（不保证强一致）。
 
-因此， Eureka可以很好的应对因网络故障导致部分节点失去联系的情况，而不会像zookeeper那样使整个注册服务瘫痪。
+因此， Eureka可以很好的应对因网络故障导致部分节点失去联系的情况，而不会像 Zookeeper 那样使整个注册服务瘫痪。
